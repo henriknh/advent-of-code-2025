@@ -10,7 +10,6 @@ function example(input) {
   while (sum2 > 0) {
     sum2 = 0;
 
-    let coords = [];
     for (let x = 0; x < input[0].length; x++) {
       for (let y = 0; y < input.length; y++) {
         let p = [];
@@ -41,14 +40,10 @@ function example(input) {
 
           if (neighboringPaperRolls < 4) {
             sum2++;
-            coords.push([x, y]);
+            input[y][x] = ".";
           }
         }
       }
-    }
-
-    for (let [x, y] of coords) {
-      input[y][x] = ".";
     }
 
     sum += sum2;
